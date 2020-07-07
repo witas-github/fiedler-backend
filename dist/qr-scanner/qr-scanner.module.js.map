@@ -1,0 +1,1 @@
+{"version":3,"file":"qr-scanner.module.js","sourceRoot":"","sources":["../../src/qr-scanner/qr-scanner.module.ts"],"names":[],"mappings":";;;;;;;;;AAAA,2CAAwC;AACxC,mEAA8D;AAK9D,IAAa,eAAe,GAA5B,MAAa,eAAe;CAAG,CAAA;AAAlB,eAAe;IAH3B,eAAM,CAAC;QACN,WAAW,EAAE,CAAC,2CAAmB,CAAC;KACnC,CAAC;GACW,eAAe,CAAG;AAAlB,0CAAe"}
