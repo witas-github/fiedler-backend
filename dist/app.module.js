@@ -9,17 +9,23 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const core_module_1 = require("./core/core.module");
-const devices_module_1 = require("./devices/devices.module");
 const mongoose_1 = require("@nestjs/mongoose");
+const devices_service_1 = require("./services/devices/devices.service");
+const servers_service_1 = require("./services/servers/servers.service");
+const devices_controller_1 = require("./controllers/devices/devices.controller");
+const servers_controller_1 = require("./controllers/servers/servers.controller");
+const protocols_controller_1 = require("./controllers/protocols/protocols.controller");
+const protocols_service_1 = require("./services/protocols/protocols.service");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
         imports: [
             mongoose_1.MongooseModule.forRoot('mongodb://localhost:27017'),
-            core_module_1.CoreModule,
-            devices_module_1.DevicesModule
+            core_module_1.CoreModule
         ],
+        providers: [devices_service_1.DevicesService, servers_service_1.ServersService, protocols_service_1.ProtocolsService],
+        controllers: [devices_controller_1.DevicesController, servers_controller_1.ServersController, protocols_controller_1.ProtocolsController]
     })
 ], AppModule);
 exports.AppModule = AppModule;
