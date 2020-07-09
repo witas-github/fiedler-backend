@@ -16,12 +16,20 @@ const devices_controller_1 = require("./controllers/devices/devices.controller")
 const servers_controller_1 = require("./controllers/servers/servers.controller");
 const protocols_controller_1 = require("./controllers/protocols/protocols.controller");
 const protocols_service_1 = require("./services/protocols/protocols.service");
+const device_schema_1 = require("./entities/device.schema");
+const protocol_schema_1 = require("./entities/protocol.schema");
+const server_schema_1 = require("./entities/server.schema");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
         imports: [
             mongoose_1.MongooseModule.forRoot('mongodb://localhost:27017'),
+            mongoose_1.MongooseModule.forFeature([
+                { name: device_schema_1.Device.name, schema: device_schema_1.DeviceSchema },
+                { name: protocol_schema_1.Protocol.name, schema: protocol_schema_1.ProtocolSchema },
+                { name: server_schema_1.Server.name, schema: server_schema_1.ServerSchema },
+            ]),
             core_module_1.CoreModule
         ],
         providers: [devices_service_1.DevicesService, servers_service_1.ServersService, protocols_service_1.ProtocolsService],
