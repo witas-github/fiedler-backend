@@ -24,10 +24,15 @@ let DevicesController = class DevicesController {
         await this.devicesService.create(createDeviceDto);
     }
     async findAll() {
-        return this.devicesService.findAll();
+        return await this.devicesService.findAll();
     }
-    findOne(params) {
-        return this.devicesService.findOne(params.id);
+    async findOne(params) {
+        return await this.devicesService.findOne(params.id).catch((error) => {
+            throw new common_1.HttpException('DEVICE_ID_NOT_FOUND', 404);
+        });
+    }
+    async findByProtocol(params) {
+        return await this.devicesService.findOne(params.id);
     }
 };
 __decorate([
@@ -48,8 +53,15 @@ __decorate([
     __param(0, common_1.Param()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], DevicesController.prototype, "findOne", null);
+__decorate([
+    common_1.Get('protocol/:id'),
+    __param(0, common_1.Param()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], DevicesController.prototype, "findByProtocol", null);
 DevicesController = __decorate([
     common_1.Controller('devices'),
     __metadata("design:paramtypes", [devices_service_1.DevicesService])

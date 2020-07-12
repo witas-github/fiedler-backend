@@ -7,4 +7,5 @@ export declare class DevicesController {
     create(createDeviceDto: CreateDeviceDto): Promise<void>;
     findAll(): Promise<Device[]>;
     findOne(params: any): Promise<Device>;
+    findByProtocol(params: any): Promise<Device>;
 }

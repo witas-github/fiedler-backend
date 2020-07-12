@@ -26,10 +26,13 @@ let DevicesService = class DevicesService {
         return createdDevice.save();
     }
     async findAll() {
-        return this.deviceModel.find().exec();
+        return await this.deviceModel.find().exec();
     }
     async findOne(id) {
-        return this.deviceModel.findById(id);
+        return await this.deviceModel.findById(id).exec();
+    }
+    async findByProtocol(id) {
+        return await this.deviceModel.find({ protocolId: id }).exec();
     }
 };
 DevicesService = __decorate([

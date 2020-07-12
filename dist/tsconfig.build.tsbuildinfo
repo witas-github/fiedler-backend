@@ -2807,8 +2807,8 @@
         "affectsGlobalScope": false
       },
       "../src/services/devices/devices.service.ts": {
-        "version": "c669f8cf984848243328db8c5404699f480dd44ead397bc4f87ef4ef04923fa5",
-        "signature": "555329692ee7d560ef6bb8cb7792de7b0acda248b6464b8f5bac1b3447741f15",
+        "version": "0cb7a00f03edce7d2e430f641dbcf73b3a417ca62797e0b9f3ee60e6616e4540",
+        "signature": "27b43a55a17f17a15a1bb8e52742ee68507b533b39bfdbd5be576ea14d7b7976",
         "affectsGlobalScope": false
       },
       "../src/dto/create-server.dto.ts": {
@@ -2827,8 +2827,8 @@
         "affectsGlobalScope": false
       },
       "../src/controllers/devices/devices.controller.ts": {
-        "version": "0344cf2bf87a716f4a3668e0ff823922e48f1b85c0ee38a638f2176e91b30cad",
-        "signature": "506a48c9a7e54daf26ed004645a6f169cb5bf1d2808bb648c730447e3721200b",
+        "version": "e568324c190b4e0d872e8d9eb653e467eaad1304102893fdddcb6d00d1282166",
+        "signature": "3391ba8550427826002bef8fb2812be879b285e62af737571b06b4142558ea16",
         "affectsGlobalScope": false
       },
       "../src/controllers/servers/servers.controller.ts": {
@@ -2862,7 +2862,7 @@
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "4eac1443dec29e9dcf4986189a5aa230a04fb0e9eaddf0ca33fc35aedfc95a9b",
+        "version": "a4d3fef645068a4d6aacde40e0bdea53513b017becb0e2031d5701683e4026d9",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },

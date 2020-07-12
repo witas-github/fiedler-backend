@@ -7,4 +7,5 @@ export declare class DevicesService {
     create(createDeviceDto: CreateDeviceDto): Promise<Device>;
     findAll(): Promise<Device[]>;
     findOne(id: string): Promise<Device>;
+    findByProtocol(id: any): Promise<Device[]>;
 }

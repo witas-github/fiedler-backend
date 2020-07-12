@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, HttpException, Param, Post, Res } from '@nestjs/common';
 import { DevicesService } from '../../services/devices/devices.service';
 import { Device } from '../../entities/device.schema';
 import { CreateDeviceDto } from '../../dto/create-device.dto';
@@ -15,11 +15,18 @@ export class DevicesController {
 
   @Get()
   async findAll(): Promise<Device[]> {
-    return this.devicesService.findAll();
+    return await this.devicesService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param() params) {
-    return this.devicesService.findOne(params.id);
+  async findOne(@Param() params): Promise<Device> {
+      return await this.devicesService.findOne(params.id).catch((error) => {
+        throw new HttpException('DEVICE_ID_NOT_FOUND', 404);
+      });
+  }
+
+  @Get('protocol/:id')
+  async findByProtocol(@Param() params) {
+    return await this.devicesService.findOne(params.id);
   }
 }

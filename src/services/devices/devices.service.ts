@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { CreateDeviceDto } from '../../dto/create-device.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Device } from '../../entities/device.schema';
@@ -14,10 +14,14 @@ export class DevicesService {
   }
 
   async findAll(): Promise<Device[]> {
-    return this.deviceModel.find().exec();
+    return await this.deviceModel.find().exec();
   }
 
   async findOne(id: string): Promise<Device> {
-    return this.deviceModel.findById(id);
+    return await this.deviceModel.findById(id).exec();
+  }
+
+  async findByProtocol(id: any): Promise<Device[]> {
+    return await this.deviceModel.find({ protocolId: id }).exec();
   }
 }
