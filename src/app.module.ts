@@ -1,27 +1,32 @@
-import { Module } from '@nestjs/common';import { CoreModule } from './core/core.module';
-import { MongooseModule } from '@nestjs/mongoose';
-import { DevicesService } from './services/devices/devices.service';
-import { ServersService } from './services/servers/servers.service';
+import { Module } from '@nestjs/common';
+import { CoreModule } from './core/core.module';
+import { MikroOrmModule } from 'nestjs-mikro-orm';
 import { DevicesController } from './controllers/devices/devices.controller';
 import { ServersController } from './controllers/servers/servers.controller';
 import { ProtocolsController } from './controllers/protocols/protocols.controller';
-import { ProtocolsService } from './services/protocols/protocols.service';
-import { Device, DeviceSchema } from './entities/device.schema';
-import { Protocol, ProtocolSchema } from './entities/protocol.schema';
-import { Server, ServerSchema } from './entities/server.schema';
+import { Server } from './entities/server';
 
+const entities = [
+  Server,
+];
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost:27017'),
-    MongooseModule.forFeature([
-      { name: Device.name, schema: DeviceSchema },
-      { name: Protocol.name, schema: ProtocolSchema },
-      { name: Server.name, schema: ServerSchema },
-      ]),
-    CoreModule
+
+    MikroOrmModule.forRoot({
+      entities: entities,
+      entitiesDirsTs: ['src/entities'],
+      dbName: 'test',
+      clientUrl: 'mongodb://localhost:27017',
+      discovery: {
+        warnWhenNoEntities: true,
+      },
+    }),
+
+    CoreModule,
   ],
-  providers: [DevicesService, ServersService, ProtocolsService],
-  controllers: [DevicesController, ServersController, ProtocolsController]
+  providers: [],
+  controllers: [DevicesController, ServersController, ProtocolsController],
 })
-export class AppModule {}
+export class AppModule {
+}

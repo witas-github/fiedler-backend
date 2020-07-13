@@ -14,47 +14,72 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ServersController = void 0;
 const common_1 = require("@nestjs/common");
-const servers_service_1 = require("../../services/servers/servers.service");
-const create_server_dto_1 = require("../../dto/create-server.dto");
+const mikro_orm_1 = require("mikro-orm");
+const server_1 = require("../../entities/server");
+const create_server_dto_1 = require("./create-server.dto");
+const update_server_dto_1 = require("./update-server.dto");
 let ServersController = class ServersController {
-    constructor(serversServices) {
-        this.serversServices = serversServices;
+    constructor(em) {
+        this.em = em;
     }
-    async create(createServerDto) {
-        await this.serversServices.create(createServerDto);
+    async getServers() {
+        return this.em.find(server_1.Server, {});
     }
-    async findAll() {
-        return await this.serversServices.findAll();
+    async getServer(params) {
+        return this.em.find(server_1.Server, { _id: params.id });
     }
-    async findOne(params) {
-        return await this.serversServices.findOne(params.id).catch((error) => {
-            throw new common_1.HttpException('SERVER_ID_NOT_FOUND', 404);
-        });
+    async createServer(body) {
+        const server = this.em.create(server_1.Server, body);
+        await this.em.persistAndFlush(server);
+        return server;
+    }
+    async updateCategory(params, body) {
+        const server = await this.em.findOne(server_1.Server, { _id: params.id });
+        mikro_orm_1.wrap(server).assign(body);
+        await this.em.persistAndFlush(server);
+        return server;
+    }
+    async deleteServer(params) {
+        this.em.remove(server_1.Server, { _id: params.id });
     }
 };
-__decorate([
-    common_1.Post(),
-    __param(0, common_1.Body()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_server_dto_1.CreateServerDto]),
-    __metadata("design:returntype", Promise)
-], ServersController.prototype, "create", null);
 __decorate([
     common_1.Get(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
-], ServersController.prototype, "findAll", null);
+], ServersController.prototype, "getServers", null);
 __decorate([
     common_1.Get(':id'),
     __param(0, common_1.Param()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
-], ServersController.prototype, "findOne", null);
+], ServersController.prototype, "getServer", null);
+__decorate([
+    common_1.Post(),
+    __param(0, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [create_server_dto_1.CreateServerDto]),
+    __metadata("design:returntype", Promise)
+], ServersController.prototype, "createServer", null);
+__decorate([
+    common_1.Patch(':id'),
+    __param(0, common_1.Param()), __param(1, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, update_server_dto_1.UpdateServerDto]),
+    __metadata("design:returntype", Promise)
+], ServersController.prototype, "updateCategory", null);
+__decorate([
+    common_1.Delete(':id'),
+    __param(0, common_1.Param()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], ServersController.prototype, "deleteServer", null);
 ServersController = __decorate([
     common_1.Controller('servers'),
-    __metadata("design:paramtypes", [servers_service_1.ServersService])
+    __metadata("design:paramtypes", [mikro_orm_1.EntityManager])
 ], ServersController);
 exports.ServersController = ServersController;
 //# sourceMappingURL=servers.controller.js.map

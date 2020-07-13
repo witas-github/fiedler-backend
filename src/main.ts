@@ -1,6 +1,8 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { EntityManager } from 'mikro-orm';
+
 
 async function bootstrap() {
   const fs = require('fs');
@@ -12,11 +14,19 @@ async function bootstrap() {
       key: keyFile,
       cert: certFile,
     }});
+  app.enableCors({exposedHeaders: ['X-Selected-Organisation-Id']});
   app.useGlobalPipes(new ValidationPipe());
 
+  app.use((req, res, next) => {
+    // Add entity manager to every request to be able to use db in param decorators
+    req.entityManager = app.get(EntityManager) as EntityManager;
+    next();
+  });
 
-  app.enableCors();
   await app.listen(3000,'0.0.0.0');
   console.log(`Application is running on: ${await app.getUrl()}`);
+
+
+
 }
 bootstrap();
