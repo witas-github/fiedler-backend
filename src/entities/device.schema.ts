@@ -1,6 +1,7 @@
 
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
+import * as mongoose from 'mongoose';
 
 @Schema()
 export class Device extends Document {
@@ -8,10 +9,10 @@ export class Device extends Document {
   srn: string;
 
   @Prop()
-  regServer: number;
+  regServer: { type: [mongoose.Schema.Types.ObjectId], required: false, ref: 'Server' }
 
   @Prop()
-  activeServer: number;
+  activeServer: { type: [mongoose.Schema.Types.ObjectId], required: false, ref: 'Server' }
 
   @Prop()
   date: any;
@@ -20,7 +21,7 @@ export class Device extends Document {
   state: number;
 
   @Prop()
-  protocolId: number;
+  protocol: { type: [mongoose.Schema.Types.ObjectId], required: false, ref: 'Protocol' }
 }
 
 export const DeviceSchema = SchemaFactory.createForClass(Device);

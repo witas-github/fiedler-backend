@@ -24,10 +24,12 @@ let ServersController = class ServersController {
         await this.serversServices.create(createServerDto);
     }
     async findAll() {
-        return this.serversServices.findAll();
+        return await this.serversServices.findAll();
     }
-    findOne(params) {
-        return this.serversServices.findOne(params.id);
+    async findOne(params) {
+        return await this.serversServices.findOne(params.id).catch((error) => {
+            throw new common_1.HttpException('SERVER_ID_NOT_FOUND', 404);
+        });
     }
 };
 __decorate([
@@ -48,7 +50,7 @@ __decorate([
     __param(0, common_1.Param()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], ServersController.prototype, "findOne", null);
 ServersController = __decorate([
     common_1.Controller('servers'),

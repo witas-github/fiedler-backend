@@ -34,6 +34,9 @@ let DevicesService = class DevicesService {
     async findByProtocol(id) {
         return await this.deviceModel.find({ protocolId: id }).exec();
     }
+    async findBySrn(id) {
+        return await this.deviceModel.find({ srn: id }).exec();
+    }
 };
 DevicesService = __decorate([
     common_1.Injectable(),

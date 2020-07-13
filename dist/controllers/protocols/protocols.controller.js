@@ -24,10 +24,12 @@ let ProtocolsController = class ProtocolsController {
         await this.protocolsService.create(createProtocolDto);
     }
     async findAll() {
-        return this.protocolsService.findAll();
+        return await this.protocolsService.findAll();
     }
-    findOne(params) {
-        return this.protocolsService.findOne(params.id);
+    async findOne(params) {
+        return await this.protocolsService.findOne(params.id).catch((error) => {
+            throw new common_1.HttpException('PROTOCOL_ID_NOT_FOUND', 404);
+        });
     }
 };
 __decorate([
@@ -48,7 +50,7 @@ __decorate([
     __param(0, common_1.Param()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], ProtocolsController.prototype, "findOne", null);
 ProtocolsController = __decorate([
     common_1.Controller('protocols'),

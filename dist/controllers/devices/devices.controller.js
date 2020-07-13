@@ -20,8 +20,8 @@ let DevicesController = class DevicesController {
     constructor(devicesService) {
         this.devicesService = devicesService;
     }
-    async create(createDeviceDto) {
-        await this.devicesService.create(createDeviceDto);
+    create(createDeviceDto) {
+        return this.devicesService.create(createDeviceDto);
     }
     async findAll() {
         return await this.devicesService.findAll();
@@ -32,7 +32,10 @@ let DevicesController = class DevicesController {
         });
     }
     async findByProtocol(params) {
-        return await this.devicesService.findOne(params.id);
+        return await this.devicesService.findByProtocol(params.id);
+    }
+    async findBySrn(params) {
+        return await this.devicesService.findBySrn(params.id);
     }
 };
 __decorate([
@@ -40,7 +43,7 @@ __decorate([
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_device_dto_1.CreateDeviceDto]),
-    __metadata("design:returntype", Promise)
+    __metadata("design:returntype", void 0)
 ], DevicesController.prototype, "create", null);
 __decorate([
     common_1.Get(),
@@ -62,6 +65,13 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], DevicesController.prototype, "findByProtocol", null);
+__decorate([
+    common_1.Get('srn/:id'),
+    __param(0, common_1.Param()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], DevicesController.prototype, "findBySrn", null);
 DevicesController = __decorate([
     common_1.Controller('devices'),
     __metadata("design:paramtypes", [devices_service_1.DevicesService])

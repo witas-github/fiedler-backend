@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, HttpException, Param, Post } from '@nestjs/common';
 import { ProtocolsService } from '../../services/protocols/protocols.service';
 import { CreateProtocolDto } from '../../dto/create-protocol.dto';
 import { Protocol } from '../../entities/protocol.schema';
@@ -16,11 +16,13 @@ export class ProtocolsController {
 
   @Get()
   async findAll(): Promise<Protocol[]> {
-    return this.protocolsService.findAll();
+    return await this.protocolsService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param() params) {
-    return this.protocolsService.findOne(params.id);
+  async findOne(@Param() params) {
+    return await this.protocolsService.findOne(params.id).catch((error) => {
+      throw new HttpException('PROTOCOL_ID_NOT_FOUND',404);
+    });
   }
 }

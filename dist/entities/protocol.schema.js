@@ -20,7 +20,7 @@ __decorate([
 ], Protocol.prototype, "name", void 0);
 __decorate([
     mongoose_1.Prop(),
-    __metadata("design:type", Number)
+    __metadata("design:type", Object)
 ], Protocol.prototype, "activeSrv", void 0);
 __decorate([
     mongoose_1.Prop(),

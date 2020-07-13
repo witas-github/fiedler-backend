@@ -1,7 +1,12 @@
 import { Document } from 'mongoose';
+import * as mongoose from "mongoose";
 export declare class Protocol extends Document {
     name: string;
-    activeSrv: number;
+    activeSrv: {
+        type: [mongoose.Schema.Types.ObjectId];
+        required: false;
+        ref: 'Server';
+    };
     date: any;
 }
-export declare const ProtocolSchema: import("mongoose").Schema<any>;
+export declare const ProtocolSchema: mongoose.Schema<any>;

@@ -1,16 +1,18 @@
-import { Body, Controller, Get, HttpException, Param, Post, Res } from '@nestjs/common';
+import { Body, Controller, Get, Header, HttpException, Param, Post, Res } from '@nestjs/common';
 import { DevicesService } from '../../services/devices/devices.service';
 import { Device } from '../../entities/device.schema';
 import { CreateDeviceDto } from '../../dto/create-device.dto';
+import { ValidationPipe } from '../../common/pipes/validation.pipe';
 
 @Controller('devices')
 export class DevicesController {
   constructor(private readonly devicesService: DevicesService) {}
 
   @Post()
-  //@Roles('admin')
-  async create(@Body() createDeviceDto: CreateDeviceDto) {
-    await this.devicesService.create(createDeviceDto);
+  create(@Body() createDeviceDto: CreateDeviceDto) {
+    //console.log(body);
+    //return createDeviceDto;
+    return this.devicesService.create(createDeviceDto);
   }
 
   @Get()
@@ -27,6 +29,11 @@ export class DevicesController {
 
   @Get('protocol/:id')
   async findByProtocol(@Param() params) {
-    return await this.devicesService.findOne(params.id);
+    return await this.devicesService.findByProtocol(params.id);
+  }
+
+  @Get('srn/:id')
+  async findBySrn(@Param() params) {
+    return await this.devicesService.findBySrn(params.id);
   }
 }

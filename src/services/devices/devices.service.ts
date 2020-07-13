@@ -24,4 +24,8 @@ export class DevicesService {
   async findByProtocol(id: any): Promise<Device[]> {
     return await this.deviceModel.find({ protocolId: id }).exec();
   }
+
+  async findBySrn(id: any): Promise<Device[]> {
+    return await this.deviceModel.find({ srn: id }).exec();
+  }
 }

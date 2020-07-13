@@ -20,11 +20,11 @@ __decorate([
 ], Device.prototype, "srn", void 0);
 __decorate([
     mongoose_1.Prop(),
-    __metadata("design:type", Number)
+    __metadata("design:type", Object)
 ], Device.prototype, "regServer", void 0);
 __decorate([
     mongoose_1.Prop(),
-    __metadata("design:type", Number)
+    __metadata("design:type", Object)
 ], Device.prototype, "activeServer", void 0);
 __decorate([
     mongoose_1.Prop(),
@@ -36,8 +36,8 @@ __decorate([
 ], Device.prototype, "state", void 0);
 __decorate([
     mongoose_1.Prop(),
-    __metadata("design:type", Number)
-], Device.prototype, "protocolId", void 0);
+    __metadata("design:type", Object)
+], Device.prototype, "protocol", void 0);
 Device = __decorate([
     mongoose_1.Schema()
 ], Device);
