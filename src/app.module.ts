@@ -5,9 +5,13 @@ import { DevicesController } from './controllers/devices/devices.controller';
 import { ServersController } from './controllers/servers/servers.controller';
 import { ProtocolsController } from './controllers/protocols/protocols.controller';
 import { Server } from './entities/server';
+import { Protocol } from './entities/protocol';
+import { Device } from './entities/device';
 
 const entities = [
   Server,
+  Protocol,
+  Device
 ];
 
 @Module({

@@ -14,8 +14,12 @@ const devices_controller_1 = require("./controllers/devices/devices.controller")
 const servers_controller_1 = require("./controllers/servers/servers.controller");
 const protocols_controller_1 = require("./controllers/protocols/protocols.controller");
 const server_1 = require("./entities/server");
+const protocol_1 = require("./entities/protocol");
+const device_1 = require("./entities/device");
 const entities = [
     server_1.Server,
+    protocol_1.Protocol,
+    device_1.Device
 ];
 let AppModule = class AppModule {
 };

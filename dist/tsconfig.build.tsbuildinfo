@@ -2761,11 +2761,6 @@
         "signature": "9045ad52926fd5db4a3c61ad027db1ca604ec68cf4d57ce30128970cdf9a9047",
         "affectsGlobalScope": false
       },
-      "../src/controllers/devices/devices.controller.ts": {
-        "version": "37345ac61b716daed8d7db7958997d220cb57e821be7ede95b1d0999490ef6f6",
-        "signature": "55945265e577a7676d5abd3a5dbdf5b02855f1dbe91211fb530c272a1da3a278",
-        "affectsGlobalScope": false
-      },
       "../node_modules/@types/bson/index.d.ts": {
         "version": "3994ebfd11faa4018d8e1b879190046588f41f5cd60438e642ca39a705c726be",
         "signature": "3994ebfd11faa4018d8e1b879190046588f41f5cd60438e642ca39a705c726be",
@@ -2779,6 +2774,16 @@
       "../src/entities/server.ts": {
         "version": "06d89f73d6f147f01fe9b193586bd1b94fc269ea95c78fa38a5058e56a5c76b6",
         "signature": "36ff3630c343a0eef419a2544aed0994381fc7013fdfcc816e19d9dc5f264363",
+        "affectsGlobalScope": false
+      },
+      "../src/entities/protocol.ts": {
+        "version": "2cca593188846e9700eb9cd31129522a4b70676ef24d611de65e1c9f647c6e5a",
+        "signature": "b919784d38197edcb1b37a109afe95273cd3703bb7f1c5e37027eff6f0e64efc",
+        "affectsGlobalScope": false
+      },
+      "../src/entities/device.ts": {
+        "version": "697d4b5517e434e229c4f0825c511a8ea37ed38854e06ff7752aa71e27352c1c",
+        "signature": "0ff9aee761edc5c9b066970d8345c678c87ebf705db352e1f5f542e64f2562b8",
         "affectsGlobalScope": false
       },
       "../node_modules/class-validator/types/validation/ValidationError.d.ts": {
@@ -3396,8 +3401,23 @@
         "signature": "1d5f30cbd06ffa2aab22346b087e140f069851c17b91189be8d1e168d53f9f93",
         "affectsGlobalScope": false
       },
+      "../src/controllers/devices/create-device.dto.ts": {
+        "version": "24787f9f538f0d6914f6d5262954b40697e0b5a904ad0ecc3ce9e35291cb5743",
+        "signature": "6eb808783cbd6377dcdcdf41ef4ddd8b58b8ac548a9b75a7a423a6f53d85679a",
+        "affectsGlobalScope": false
+      },
+      "../src/controllers/devices/update-device.dto.ts": {
+        "version": "d2dfad5ec10dc9b8c60089948ee9c98279386b3adb5e5a43e20ddd009efbb869",
+        "signature": "46ea50e17c929c16adcc45d3f27a22a97e24e07c901f31652d79b0ec3eb0812c",
+        "affectsGlobalScope": false
+      },
+      "../src/controllers/devices/devices.controller.ts": {
+        "version": "de9e4e112c4d9a46f0410e08ecfbd934364d6a1ba7bca014214918d0365bea38",
+        "signature": "de68c1512dc67bb0cfe94e461f337cb0b37edab31f3a47b6b1da2dd1a06dd9c0",
+        "affectsGlobalScope": false
+      },
       "../src/controllers/servers/create-server.dto.ts": {
-        "version": "9760d73640ecf4d2b46cd5871cd7c125ec6fb52e37003c46646fea29afe92206",
+        "version": "66fef90cee373c12387ad1cf0b2b507e38c84f5f8da4a95275dea1828deadc9b",
         "signature": "ffe4b70fa6833420466de118b52684f209165c5a2e26df98b97bb02e7fb9332d",
         "affectsGlobalScope": false
       },
@@ -3407,17 +3427,27 @@
         "affectsGlobalScope": false
       },
       "../src/controllers/servers/servers.controller.ts": {
-        "version": "b45fdd853345a712941b4f4eb64f538a23654ad3207c2ee6e29c4645c120b091",
+        "version": "8ff3c2531acd9ef04921b967d93f2dc3958f594c0ccd539a6d61e8e6d51cb855",
         "signature": "b436788fb642200b097dc0c2cef7d8effcec13b9f0dbd1c4db4ce837f71362d1",
         "affectsGlobalScope": false
       },
+      "../src/controllers/protocols/create-protocol.dto.ts": {
+        "version": "d9742d59f9c67ede43bcf4cb812b85b4937036f4190fa2f419b0a4258c32ed4f",
+        "signature": "7133d84da25521197dba4039ea847c03d6b1ffa5554533412daa5650e041ddbb",
+        "affectsGlobalScope": false
+      },
+      "../src/controllers/protocols/update-protocol.dto.ts": {
+        "version": "b2dccdd9812ba818de00e20339b0f6d3e874640846763bd2ea45944ffa6f7e8b",
+        "signature": "e48946d28ed290eadd8e43edcb893d70d19a3067303d5095e4386c38f7533b7a",
+        "affectsGlobalScope": false
+      },
       "../src/controllers/protocols/protocols.controller.ts": {
-        "version": "a3fb3e29e49bbf4de705c004e8b30e4bff76f01d71feace4d48ebab419d54afb",
-        "signature": "e736e8b68821996e88b2ab407265b62a1ed8686a91588e66c6992b63ec7e36a7",
+        "version": "f11ebd26ca8db8d1b1c198ca952d970f0c4ee6ed7d70d45fcaadad5f4697c798",
+        "signature": "acfccfbbb435746bd7ba99d5291c123c93e249576fee725351e29b7d41517105",
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "0b02bf5af1bec3c0d258109cbac35d2a6d10c45a30c7df41683e291a94dc9424",
+        "version": "9efe97c7e1e9180414d4cfda99e25eb947203cbeec3490e1766528575e4119e9",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -8359,6 +8389,8 @@
         "../src/controllers/protocols/protocols.controller.ts",
         "../src/controllers/servers/servers.controller.ts",
         "../src/core/core.module.ts",
+        "../src/entities/device.ts",
+        "../src/entities/protocol.ts",
         "../src/entities/server.ts"
       ],
       "../src/common/decorators/roles.decorator.ts": [
@@ -8408,20 +8440,55 @@
         "../node_modules/class-transformer/index.d.ts",
         "../node_modules/class-validator/types/index.d.ts"
       ],
+      "../src/controllers/devices/create-device.dto.ts": [
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/class-validator/types/index.d.ts",
+        "../node_modules/mikro-orm/dist/index.d.ts",
+        "../src/entities/protocol.ts",
+        "../src/entities/server.ts"
+      ],
       "../src/controllers/devices/devices.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/mikro-orm/dist/index.d.ts",
+        "../src/controllers/devices/create-device.dto.ts",
+        "../src/controllers/devices/update-device.dto.ts",
+        "../src/entities/device.ts",
+        "../src/entities/protocol.ts"
+      ],
+      "../src/controllers/devices/update-device.dto.ts": [
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../src/entities/protocol.ts"
+      ],
+      "../src/controllers/protocols/create-protocol.dto.ts": [
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/class-validator/types/index.d.ts",
+        "../src/entities/server.ts"
       ],
       "../src/controllers/protocols/protocols.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
-        "../node_modules/@types/node/util.d.ts"
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/mikro-orm/dist/index.d.ts",
+        "../src/controllers/protocols/create-protocol.dto.ts",
+        "../src/controllers/protocols/update-protocol.dto.ts",
+        "../src/entities/server.ts"
+      ],
+      "../src/controllers/protocols/update-protocol.dto.ts": [
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/class-validator/types/index.d.ts",
+        "../src/entities/server.ts"
       ],
       "../src/controllers/servers/create-server.dto.ts": [
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../node_modules/class-validator/types/index.d.ts"
+        "../node_modules/class-validator/types/index.d.ts",
+        "../src/entities/server.ts"
       ],
       "../src/controllers/servers/servers.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -8458,6 +8525,21 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/rxjs/index.d.ts",
         "../node_modules/rxjs/operators/index.d.ts"
+      ],
+      "../src/entities/device.ts": [
+        "../node_modules/@types/mongodb/index.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/mikro-orm/dist/index.d.ts",
+        "../src/entities/protocol.ts",
+        "../src/entities/server.ts"
+      ],
+      "../src/entities/protocol.ts": [
+        "../node_modules/@types/mongodb/index.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/mikro-orm/dist/index.d.ts",
+        "../src/entities/server.ts"
       ],
       "../src/entities/server.ts": [
         "../node_modules/@types/mongodb/index.d.ts",
@@ -13088,6 +13170,30 @@
       "../src/common/pipes/validation.pipe.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
       ],
+      "../src/controllers/devices/create-device.dto.ts": [
+        "../src/entities/protocol.ts"
+      ],
+      "../src/controllers/devices/devices.controller.ts": [
+        "../node_modules/mikro-orm/dist/index.d.ts",
+        "../src/controllers/devices/create-device.dto.ts",
+        "../src/controllers/devices/update-device.dto.ts",
+        "../src/entities/device.ts"
+      ],
+      "../src/controllers/devices/update-device.dto.ts": [
+        "../src/entities/protocol.ts"
+      ],
+      "../src/controllers/protocols/create-protocol.dto.ts": [
+        "../src/entities/server.ts"
+      ],
+      "../src/controllers/protocols/protocols.controller.ts": [
+        "../node_modules/mikro-orm/dist/index.d.ts",
+        "../src/controllers/protocols/create-protocol.dto.ts",
+        "../src/controllers/protocols/update-protocol.dto.ts",
+        "../src/entities/server.ts"
+      ],
+      "../src/controllers/protocols/update-protocol.dto.ts": [
+        "../src/entities/server.ts"
+      ],
       "../src/controllers/servers/servers.controller.ts": [
         "../node_modules/mikro-orm/dist/index.d.ts",
         "../src/controllers/servers/create-server.dto.ts",
@@ -13101,6 +13207,15 @@
       "../src/core/interceptors/transform.interceptor.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/rxjs/index.d.ts"
+      ],
+      "../src/entities/device.ts": [
+        "../node_modules/@types/mongodb/index.d.ts",
+        "../src/entities/protocol.ts",
+        "../src/entities/server.ts"
+      ],
+      "../src/entities/protocol.ts": [
+        "../node_modules/@types/mongodb/index.d.ts",
+        "../src/entities/server.ts"
       ],
       "../src/entities/server.ts": [
         "../node_modules/@types/mongodb/index.d.ts"
@@ -13846,14 +13961,20 @@
       "../src/common/middleware/logger.middleware.ts",
       "../src/common/pipes/parse-int.pipe.ts",
       "../src/common/pipes/validation.pipe.ts",
+      "../src/controllers/devices/create-device.dto.ts",
       "../src/controllers/devices/devices.controller.ts",
+      "../src/controllers/devices/update-device.dto.ts",
+      "../src/controllers/protocols/create-protocol.dto.ts",
       "../src/controllers/protocols/protocols.controller.ts",
+      "../src/controllers/protocols/update-protocol.dto.ts",
       "../src/controllers/servers/create-server.dto.ts",
       "../src/controllers/servers/servers.controller.ts",
       "../src/controllers/servers/update-server.dto.ts",
       "../src/core/core.module.ts",
       "../src/core/interceptors/logging.interceptor.ts",
       "../src/core/interceptors/transform.interceptor.ts",
+      "../src/entities/device.ts",
+      "../src/entities/protocol.ts",
       "../src/entities/server.ts",
       "../src/main.ts"
     ]

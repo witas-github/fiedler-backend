@@ -7,8 +7,6 @@ import { UpdateServerDto } from './update-server.dto';
 @Controller('servers')
 export class ServersController {
 
-  //constructor(private readonly serversServices: ServersService) {}
-
   constructor(private em: EntityManager) {
   }
 
@@ -19,9 +17,8 @@ export class ServersController {
 
   @Get(':id')
   public async getServer(@Param() params) {
-    return this.em.find(Server, {_id:params.id});
+    return this.em.find(Server, {_id: params.id});
   }
-
 
   @Post()
   public async createServer(
@@ -32,10 +29,9 @@ export class ServersController {
     return server;
   }
 
-
   @Patch(':id')
   public async updateCategory(@Param() params, @Body() body: UpdateServerDto) {
-    const server = await this.em.findOne(Server,{_id:params.id});
+    const server = await this.em.findOne(Server, {_id: params.id});
     wrap(server).assign(body);
     await this.em.persistAndFlush(server);
     return server;
@@ -43,7 +39,7 @@ export class ServersController {
 
   @Delete(':id')
   public async deleteServer(@Param() params) {
-    this.em.remove(Server,{_id:params.id});
+    this.em.remove(Server, {_id: params.id});
   }
 
 }
