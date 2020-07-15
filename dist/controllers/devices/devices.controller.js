@@ -24,17 +24,17 @@ let DevicesController = class DevicesController {
         this.em = em;
     }
     async getDevices() {
-        return this.em.find(device_1.Device, {});
+        return this.em.find(device_1.Device, {}, ['activeServer', 'registeredServer', 'protocol']);
     }
     async getDevice(params) {
-        return this.em.find(device_1.Device, { _id: params.id });
+        return this.em.find(device_1.Device, { _id: params.id }, ['activeServer', 'registeredServer', 'protocol']);
     }
     async findByProtocol(params) {
         const protocol = await this.em.findOne(protocol_1.Protocol, { _id: params.protocolId });
-        return this.em.find(device_1.Device, { protocol: protocol });
+        return this.em.find(device_1.Device, { protocol: protocol }, ['activeServer', 'registeredServer', 'protocol']);
     }
     async findBySrn(params) {
-        return this.em.find(device_1.Device, { srn: params.srn });
+        return this.em.find(device_1.Device, { srn: params.srn }, ['activeServer', 'registeredServer', 'protocol']);
     }
     async createDevice(body) {
         const device = this.em.create(device_1.Device, body);

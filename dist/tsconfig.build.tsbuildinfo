@@ -3412,7 +3412,7 @@
         "affectsGlobalScope": false
       },
       "../src/controllers/devices/devices.controller.ts": {
-        "version": "de9e4e112c4d9a46f0410e08ecfbd934364d6a1ba7bca014214918d0365bea38",
+        "version": "fa9894363abc0cff6810dbc997c860133d09e2d0ff1c098924083fcf765afc95",
         "signature": "de68c1512dc67bb0cfe94e461f337cb0b37edab31f3a47b6b1da2dd1a06dd9c0",
         "affectsGlobalScope": false
       },
@@ -3422,12 +3422,12 @@
         "affectsGlobalScope": false
       },
       "../src/controllers/servers/update-server.dto.ts": {
-        "version": "5078e7174cac2d27543dcb51d5e16d83a82e82daef1977a64cc3c96d6d79abb8",
+        "version": "067ca72a700119e5862642ee3cbf5120ec5c493175261241b1f1d72c1cae4a23",
         "signature": "0f16844b54214f807bc08bf15854d5cff6c2528da7d1b757a9ae14df0aba20b9",
         "affectsGlobalScope": false
       },
       "../src/controllers/servers/servers.controller.ts": {
-        "version": "8ff3c2531acd9ef04921b967d93f2dc3958f594c0ccd539a6d61e8e6d51cb855",
+        "version": "3ef87c465a1ff55ce71bfcc6124c7feb12868fb5e4b4368736521e2cb7df84fc",
         "signature": "b436788fb642200b097dc0c2cef7d8effcec13b9f0dbd1c4db4ce837f71362d1",
         "affectsGlobalScope": false
       },
@@ -8456,7 +8456,8 @@
         "../src/controllers/devices/create-device.dto.ts",
         "../src/controllers/devices/update-device.dto.ts",
         "../src/entities/device.ts",
-        "../src/entities/protocol.ts"
+        "../src/entities/protocol.ts",
+        "../src/entities/server.ts"
       ],
       "../src/controllers/devices/update-device.dto.ts": [
         "../node_modules/@types/node/ts3.2/util.d.ts",

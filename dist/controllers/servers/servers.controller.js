@@ -35,6 +35,7 @@ let ServersController = class ServersController {
     }
     async updateCategory(params, body) {
         const server = await this.em.findOne(server_1.Server, { _id: params.id });
+        console.log(server);
         mikro_orm_1.wrap(server).assign(body);
         await this.em.persistAndFlush(server);
         return server;

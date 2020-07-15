@@ -1,9 +1,10 @@
 import { Body, Controller, Delete, Get, Header, HttpException, Param, Patch, Post, Res } from '@nestjs/common';
-import { EntityManager, wrap } from 'mikro-orm';
+import { EntityManager, ManyToOne, wrap } from 'mikro-orm';
 import { Device } from '../../entities/device';
 import { CreateDeviceDto } from './create-device.dto';
 import { UpdateDeviceDto } from './update-device.dto';
 import { Protocol } from '../../entities/protocol';
+import { Server } from '../../entities/server';
 
 @Controller('devices')
 export class DevicesController {
@@ -13,23 +14,23 @@ export class DevicesController {
 
   @Get()
   public async getDevices() {
-    return this.em.find(Device, {});
+    return this.em.find(Device, {},['activeServer', 'registeredServer', 'protocol']);
   }
 
   @Get(':id')
   public async getDevice(@Param() params) {
-    return this.em.find(Device, {_id: params.id});
+    return this.em.find(Device, {_id: params.id},['activeServer', 'registeredServer', 'protocol']);
   }
 
   @Get('protocol/:protocolId')
   async findByProtocol(@Param() params) {
-    const protocol = await this.em.findOne(Protocol,{_id: params.protocolId});
-    return this.em.find(Device, {protocol: protocol});
+    const protocol = await this.em.findOne(Protocol, {_id: params.protocolId});
+    return this.em.find(Device, {protocol: protocol},['activeServer', 'registeredServer', 'protocol']);
   }
 
   @Get('srn/:srn')
   async findBySrn(@Param() params) {
-    return this.em.find(Device, {srn: params.srn});
+    return this.em.find(Device, {srn: params.srn},['activeServer', 'registeredServer', 'protocol']);
   }
 
   @Post()
@@ -54,34 +55,4 @@ export class DevicesController {
     this.em.remove(Device, {_id: params.id});
   }
 
-  //constructor(private readonly devicesService: DevicesService) {}
-
-  //@Post()
-  //create(@Body() createDeviceDto: CreateDeviceDto) {
-    //console.log(body);
-    //return createDeviceDto;
-    //return this.devicesService.create(createDeviceDto);
-  //}
-
-  // @Get()
-  // async findAll(): Promise<Device[]> {
-  //   return await this.devicesService.findAll();
-  // }
-  //
-  // @Get(':id')
-  // async findOne(@Param() params): Promise<Device> {
-  //     return await this.devicesService.findOne(params.id).catch((error) => {
-  //       throw new HttpException('DEVICE_ID_NOT_FOUND', 404);
-  //     });
-  // }
-  //
-  // @Get('protocol/:id')
-  // async findByProtocol(@Param() params) {
-  //   return await this.devicesService.findByProtocol(params.id);
-  // }
-  //
-  // @Get('srn/:id')
-  // async findBySrn(@Param() params) {
-  //   return await this.devicesService.findBySrn(params.id);
-  // }
 }

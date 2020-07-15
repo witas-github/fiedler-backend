@@ -32,6 +32,7 @@ export class ServersController {
   @Patch(':id')
   public async updateCategory(@Param() params, @Body() body: UpdateServerDto) {
     const server = await this.em.findOne(Server, {_id: params.id});
+    console.log(server);
     wrap(server).assign(body);
     await this.em.persistAndFlush(server);
     return server;
