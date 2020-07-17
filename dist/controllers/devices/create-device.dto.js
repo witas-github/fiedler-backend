@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateDeviceDto = void 0;
 const class_validator_1 = require("class-validator");
+const server_1 = require("../../entities/server");
 const protocol_1 = require("../../entities/protocol");
 class CreateDeviceDto {
 }
@@ -21,12 +22,6 @@ __decorate([
     __metadata("design:type", String)
 ], CreateDeviceDto.prototype, "srn", void 0);
 __decorate([
-    class_validator_1.IsString(),
-    class_validator_1.IsNotEmpty(),
-    class_validator_1.MinLength(10),
-    __metadata("design:type", String)
-], CreateDeviceDto.prototype, "url", void 0);
-__decorate([
     class_validator_1.IsNotEmpty(),
     __metadata("design:type", protocol_1.Protocol)
 ], CreateDeviceDto.prototype, "protocol", void 0);
@@ -34,5 +29,9 @@ __decorate([
     class_validator_1.IsNumber(),
     __metadata("design:type", Number)
 ], CreateDeviceDto.prototype, "state", void 0);
+__decorate([
+    class_validator_1.IsNotEmpty(),
+    __metadata("design:type", server_1.Server)
+], CreateDeviceDto.prototype, "registeredServer", void 0);
 exports.CreateDeviceDto = CreateDeviceDto;
 //# sourceMappingURL=create-device.dto.js.map

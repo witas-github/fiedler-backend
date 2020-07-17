@@ -10,15 +10,12 @@ export class CreateDeviceDto {
   @MinLength(3)
   srn: string;
 
-  @IsString()
-  @IsNotEmpty()
-  @MinLength(10)
-  url: string;
-
   @IsNotEmpty()
   protocol: Protocol;
 
   @IsNumber()
   state: number;
 
+  @IsNotEmpty()
+  registeredServer: Server;
 }

@@ -3402,13 +3402,13 @@
         "affectsGlobalScope": false
       },
       "../src/controllers/devices/create-device.dto.ts": {
-        "version": "24787f9f538f0d6914f6d5262954b40697e0b5a904ad0ecc3ce9e35291cb5743",
-        "signature": "6eb808783cbd6377dcdcdf41ef4ddd8b58b8ac548a9b75a7a423a6f53d85679a",
+        "version": "99659684fa1b64170417df9f40e40e805b111b2f7b03a3a7e06174f7f4c96947",
+        "signature": "8a556f3ef6ac1dd72077f08659b15e509010bd95779f1c07d691a4adfa15658a",
         "affectsGlobalScope": false
       },
       "../src/controllers/devices/update-device.dto.ts": {
-        "version": "d2dfad5ec10dc9b8c60089948ee9c98279386b3adb5e5a43e20ddd009efbb869",
-        "signature": "46ea50e17c929c16adcc45d3f27a22a97e24e07c901f31652d79b0ec3eb0812c",
+        "version": "306559769dc4bdd882a3223c5578481150da3aa399a6bc1c674226246e712084",
+        "signature": "3a0f9a710e454171ecf536504269dd57936e70b189d906fdb53c0d293df04593",
         "affectsGlobalScope": false
       },
       "../src/controllers/devices/devices.controller.ts": {
@@ -8462,7 +8462,9 @@
       "../src/controllers/devices/update-device.dto.ts": [
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../src/entities/protocol.ts"
+        "../node_modules/class-validator/types/index.d.ts",
+        "../src/entities/protocol.ts",
+        "../src/entities/server.ts"
       ],
       "../src/controllers/protocols/create-protocol.dto.ts": [
         "../node_modules/@types/node/ts3.2/util.d.ts",
@@ -13172,7 +13174,8 @@
         "../node_modules/@nestjs/common/index.d.ts"
       ],
       "../src/controllers/devices/create-device.dto.ts": [
-        "../src/entities/protocol.ts"
+        "../src/entities/protocol.ts",
+        "../src/entities/server.ts"
       ],
       "../src/controllers/devices/devices.controller.ts": [
         "../node_modules/mikro-orm/dist/index.d.ts",
@@ -13181,7 +13184,8 @@
         "../src/entities/device.ts"
       ],
       "../src/controllers/devices/update-device.dto.ts": [
-        "../src/entities/protocol.ts"
+        "../src/entities/protocol.ts",
+        "../src/entities/server.ts"
       ],
       "../src/controllers/protocols/create-protocol.dto.ts": [
         "../src/entities/server.ts"
