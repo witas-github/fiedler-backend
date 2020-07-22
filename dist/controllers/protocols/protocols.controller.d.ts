@@ -12,6 +12,7 @@ export declare class ProtocolsController {
     createProtocol(body: CreateProtocolDto): Promise<{
         name: string;
         activeServer: Server;
+        registeredServer: Server;
     }>;
     updateProtocol(params: any, body: UpdateProtocolDto): Promise<{
         _id: any;

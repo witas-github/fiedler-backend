@@ -2777,8 +2777,8 @@
         "affectsGlobalScope": false
       },
       "../src/entities/protocol.ts": {
-        "version": "2cca593188846e9700eb9cd31129522a4b70676ef24d611de65e1c9f647c6e5a",
-        "signature": "b919784d38197edcb1b37a109afe95273cd3703bb7f1c5e37027eff6f0e64efc",
+        "version": "7b1e9bbf3cfb0dfb1a42d41c41fec3a4f49b9d96a64d2ceb1e5710e535c24f66",
+        "signature": "ad06df644e49033a0f29284505e4edc28a220485b317e056d09318cf10f6ddd4",
         "affectsGlobalScope": false
       },
       "../src/entities/device.ts": {
@@ -3432,18 +3432,18 @@
         "affectsGlobalScope": false
       },
       "../src/controllers/protocols/create-protocol.dto.ts": {
-        "version": "d9742d59f9c67ede43bcf4cb812b85b4937036f4190fa2f419b0a4258c32ed4f",
-        "signature": "7133d84da25521197dba4039ea847c03d6b1ffa5554533412daa5650e041ddbb",
+        "version": "d2aaf29e78d241d6860d5a5da772918020ffbf1b3f347b0084acc89eeedd34d6",
+        "signature": "9333722651cde5b11e6f2b2336f18979e3810a000f56b75a09d5f6017bd700b4",
         "affectsGlobalScope": false
       },
       "../src/controllers/protocols/update-protocol.dto.ts": {
-        "version": "b2dccdd9812ba818de00e20339b0f6d3e874640846763bd2ea45944ffa6f7e8b",
-        "signature": "e48946d28ed290eadd8e43edcb893d70d19a3067303d5095e4386c38f7533b7a",
+        "version": "f957a053b1ee356198d5f042b7e577ef7e59e33fa023c486fc0dc9abc7e353d1",
+        "signature": "22fed65091576c6f281a6135b3ac60930d5925f5df1b8d22f07e9efdd4c44021",
         "affectsGlobalScope": false
       },
       "../src/controllers/protocols/protocols.controller.ts": {
-        "version": "f11ebd26ca8db8d1b1c198ca952d970f0c4ee6ed7d70d45fcaadad5f4697c798",
-        "signature": "acfccfbbb435746bd7ba99d5291c123c93e249576fee725351e29b7d41517105",
+        "version": "b592dca245d8d3ae9e902d253c38865285407e9689860425d545c81656124ef0",
+        "signature": "3e948fb500e553628fe8e6a1e7ee84d0d899c590466fdcc4aefcf8e80126b286",
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {

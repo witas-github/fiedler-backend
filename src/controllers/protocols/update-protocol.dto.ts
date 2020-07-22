@@ -5,4 +5,5 @@ export class UpdateProtocolDto {
 
   name: string;
   activeServer: Server;
+  registeredServer: Server;
 }

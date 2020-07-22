@@ -18,6 +18,9 @@ export class Protocol {
   @ManyToOne()
   activeServer: Server;
 
+  @ManyToOne()
+  registeredServer: Server;
+
   @Property()
   createdAt: Date = new Date();
 

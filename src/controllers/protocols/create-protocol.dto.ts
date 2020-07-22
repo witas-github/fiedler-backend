@@ -10,4 +10,7 @@ export class CreateProtocolDto {
 
   @IsNotEmpty()
   activeServer: Server;
+
+  @IsNotEmpty()
+  registeredServer: Server;
 }

@@ -13,13 +13,13 @@ export class ProtocolsController {
 
   @Get()
   public async getProtocols() {
-    return this.em.find(Protocol, {},['activeServer']);
+    return this.em.find(Protocol, {},['activeServer','registeredServer']);
 
   }
 
   @Get(':id')
   public async getProtocol(@Param() params) {
-    return this.em.find(Protocol, {_id: params.id},['activeServer']);
+    return this.em.find(Protocol, {_id: params.id},['activeServer','registeredServer']);
   }
 
   @Post()

@@ -24,5 +24,9 @@ __decorate([
     class_validator_1.IsNotEmpty(),
     __metadata("design:type", server_1.Server)
 ], CreateProtocolDto.prototype, "activeServer", void 0);
+__decorate([
+    class_validator_1.IsNotEmpty(),
+    __metadata("design:type", server_1.Server)
+], CreateProtocolDto.prototype, "registeredServer", void 0);
 exports.CreateProtocolDto = CreateProtocolDto;
 //# sourceMappingURL=create-protocol.dto.js.map

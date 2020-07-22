@@ -35,6 +35,10 @@ __decorate([
     __metadata("design:type", server_1.Server)
 ], Protocol.prototype, "activeServer", void 0);
 __decorate([
+    mikro_orm_1.ManyToOne(),
+    __metadata("design:type", server_1.Server)
+], Protocol.prototype, "registeredServer", void 0);
+__decorate([
     mikro_orm_1.Property(),
     __metadata("design:type", Date)
 ], Protocol.prototype, "createdAt", void 0);

@@ -23,10 +23,10 @@ let ProtocolsController = class ProtocolsController {
         this.em = em;
     }
     async getProtocols() {
-        return this.em.find(protocol_1.Protocol, {}, ['activeServer']);
+        return this.em.find(protocol_1.Protocol, {}, ['activeServer', 'registeredServer']);
     }
     async getProtocol(params) {
-        return this.em.find(protocol_1.Protocol, { _id: params.id }, ['activeServer']);
+        return this.em.find(protocol_1.Protocol, { _id: params.id }, ['activeServer', 'registeredServer']);
     }
     async createProtocol(body) {
         const protocol = this.em.create(protocol_1.Protocol, body);
