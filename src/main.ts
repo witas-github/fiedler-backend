@@ -6,15 +6,15 @@ import { EntityManager } from 'mikro-orm';
 
 async function bootstrap() {
   const fs = require('fs');
-  const keyFile  = fs.readFileSync('/home/witas/localhost.key');
-  const certFile = fs.readFileSync('/home/witas/localhost.crt');
+  const keyFile  = fs.readFileSync('../example.key');
+  const certFile = fs.readFileSync('../example.crt');
 
   const app = await NestFactory.create(AppModule, {
+    cors: true,
     httpsOptions: {
       key: keyFile,
       cert: certFile,
     }});
-  app.enableCors({exposedHeaders: ['X-Selected-Organisation-Id']});
   app.useGlobalPipes(new ValidationPipe());
 
   app.use((req, res, next) => {
